@@ -1,0 +1,72 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*.yaml
+build:
+  local:
+    push: false
+  # googleCloudBuild:
+  #   projectId: e-commerce-319900
+  artifacts:
+    - image: vunguyen88/ecommerce-auth
+      # - image: elainevu/auth
+      # - image: us.gcr.io/e-commerce-319900/auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: vunguyen88/ecommerce-client
+      # - image: elainevu/client
+      # - image: us.gcr.io/e-commerce-319900/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
+            dest: .
+    - image: vunguyen88/ecommerce-products
+      # - image: elainevu/products
+      # - image: us.gcr.io/e-commerce-319900/products
+      context: products
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: vunguyen88/ecommerce-orders
+      # - image: elainevu/orders
+      # - image: us.gcr.io/e-commerce-319900/orders
+      context: orders
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: vunguyen88/ecommerce-expiration
+      # - image: elainevu/expiration
+      # - image: us.gcr.io/e-commerce-319900/expiration
+      context: expiration
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: vunguyen88/ecommerce-payments
+      # - image: elainevu/payments
+      # - image: us.gcr.io/e-commerce-319900/payments
+      context: payments
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
