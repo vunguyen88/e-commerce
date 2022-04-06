@@ -92,14 +92,14 @@ const Landing =  () => {
 
 };
 
-// Landing.getInitialProps = async (context, client, currentUser) => {
+Landing.getInitialProps = async (context, client, currentUser) => {
  
-//     try {
-//         const { data } = await client.get('/api/products');
-//         return { products: data };
-//     } catch (err) {
-//         console.log(err)
-//     }
-// }
+    try {
+        const { data } = await client.get('/api/products');
+        return { products: data };
+    } catch (err) {
+        console.log(err)
+    }
+}
 
 export default Landing;

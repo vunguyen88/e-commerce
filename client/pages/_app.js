@@ -52,17 +52,65 @@ AppComponent.getInitialProps = async (appContext) => {
     // return data
 
     const products = await client.get('/api/products');
-    const currentUser = await client.get('/api/users/currentuser');
-    console.log('PRODUCT DATA ', products.data)
-    if( appContext.Component.getInitialProps) {
-        pageProps = await appContext.Component.getInitialProps(appContext.ctx, client, products.data);
+    let currentUser = {};
+    try {
+        currentUser = await client.get('/api/users/currentuser');
+    } 
+    catch (err) {
+        console.log('ERROR in get currentUser')
     }
+    
+    finally {
+        
+        if (currentUser === {}) {
+            console.log('Empty object') 
+            if( appContext.Component.getInitialProps) {
+                pageProps = await appContext.Component.getInitialProps(appContext.ctx, client);
+            }
+            return {pageProps, ...products.data, ...currentUser.data}
+        } else {
+            console.log('None empty object', currentUser.data) 
+            if( appContext.Component.getInitialProps) {
+                pageProps = await appContext.Component.getInitialProps(appContext.ctx, client);
+            }
+            return {pageProps, ...products.data, ...currentUser.data}
+       }
+    }
+    ////////////
+    // const currentUser = await client.get('/api/users/currentuser');
+    // if( appContext.Component.getInitialProps) {
+    //     pageProps = await appContext.Component.getInitialProps(appContext.ctx, client);
+    // }
+    // return {pageProps, ...products.data, ...currentUser.data}
+
+
+
+
+
+    ///////////
+    // const currentUser = await client.get('/api/users/currentuser');
+    // console.log('PRODUCT DATA ', products.data)
+    // if( appContext.Component.getInitialProps) {
+    //     pageProps = await appContext.Component.getInitialProps(appContext.ctx, client, products.data);
+    // }
+
+    // client.get('/api/users/currentuser')
+    // .then(res => {
+    //     console.log('Current User response ', res);
+    //     return {pageProps, ...products.data, ...currentUser.data} 
+    // })
+    // .catch(err => {
+    //     console.log('ERROR IN GET CURRENT USER');
+    //     let currentUser = {};
+    //     return {pageProps, ...products.data, currentUser} 
+    // })
     //const currentUser = await client.get('/api/users/currentuser');
     
     //console.log('CURRENT USER ', currentUser)
-    console.log('pageProps ', pageProps)
+    //console.log('pageProps ', pageProps)
 
-    return {pageProps, ...products.data, ...currentUser.data}
+    // return {pageProps, ...products.data, ...currentUser.data}
+    //return {pageProps, ...products.data} 
 
 
 

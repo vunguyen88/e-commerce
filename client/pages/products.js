@@ -94,7 +94,7 @@ Products.getInitialProps = async (context, client, currentUser) => {
     console.log('GET INITIAL CALL FROM PRODUCTS PAGE ')
     try {
         const { data } = await client.get('/api/products');
-        //console.log('data after axios ', data);
+        console.log('data after axios ', data);
         return { products: data };
     } catch (err) {
         //console.log('ERROR IN GETTING PRODUCTS', err);
