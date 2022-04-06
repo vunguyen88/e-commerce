@@ -17,7 +17,7 @@ jobs:
   build:
     runs-on: ubuntu latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - run: cd auth && npm install && npm run test:ci
     # The type of runner that the job will run on
 
