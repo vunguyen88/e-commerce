@@ -28,7 +28,7 @@ const SignIn = ({ currentUser }) => {
     };
   
     return (
-        <div className={styles.signIn}>
+        <div className={styles.signIn}> 
             <Container>
             <form onSubmit={onSubmit}>
                 <div className={styles.form_centered} >
