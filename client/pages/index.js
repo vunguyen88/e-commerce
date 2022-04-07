@@ -93,7 +93,7 @@ const Landing =  () => {
 };
 
 Landing.getInitialProps = async (context, client, currentUser) => {
-    console.log('test');
+    console.log('get initialprops in client');
     try {
         const { data } = await client.get('/api/products');
         return { products: data };
