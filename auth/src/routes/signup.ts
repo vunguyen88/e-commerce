@@ -7,7 +7,7 @@ import { User } from '../models/user';
 //import { BadRequestError } from '../../../common/src/errors/bad-request-error';
 import { validateRequest, BadRequestError } from '@vuelaine-ecommerce/common';
 
-const router = express.Router();
+const router = express.Router(); 
 
 router.post('/api/users/signup', [
         body('email')
