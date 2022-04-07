@@ -7,7 +7,7 @@ import { User } from '../models/user';
 //import { BadRequestError } from '../../../common/src/errors/bad-request-error';
 import { validateRequest, BadRequestError } from '@vuelaine-ecommerce/common';
 
-const router = express.Router();
+const router = express.Router();  
 
 router.post('/api/users/signup', [
         body('email')
@@ -26,6 +26,7 @@ router.post('/api/users/signup', [
     async (req: Request, res: Response) => {
      
         const { email, password, role } = req.body;
+ 
         const existingUser = await User.findOne({ email });
 
         if (existingUser) {
@@ -40,7 +41,7 @@ router.post('/api/users/signup', [
             {
                 id: user.id,
                 email: user.email,
-                role: user.role,
+                role: user.role ,
             }, 
             process.env.JWT_KEY!
         );

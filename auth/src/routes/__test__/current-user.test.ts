@@ -6,7 +6,8 @@ it('response with details about current user', async () => {
         .post('/api/users/signup')
         .send({
             email: 'test@test.com',
-            password: '123456'
+            password: '123456',
+            role: "admin"
         })
         .expect(201)
     const cookie = authResponse.get('Set-Cookie');
