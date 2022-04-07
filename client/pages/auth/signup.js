@@ -15,7 +15,7 @@ const SignUp = () => {
         body: {
             email,
             password,
-            role: 'admin'
+            role: 'guest'
         },
         onSuccess: (data) => Router.push('/')
     });
