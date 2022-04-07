@@ -20,7 +20,7 @@ app.use(
         signed: false,
         //secure: true
         //secure: process.env.NODE_ENV !== 'test'
-        secure: false
+        secure: false,
     })
 );
 app.use(currentUser);
