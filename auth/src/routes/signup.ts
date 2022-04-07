@@ -26,6 +26,7 @@ router.post('/api/users/signup', [
     async (req: Request, res: Response) => {
      
         const { email, password, role } = req.body;
+ 
         const existingUser = await User.findOne({ email });
 
         if (existingUser) {
@@ -40,7 +41,7 @@ router.post('/api/users/signup', [
             {
                 id: user.id,
                 email: user.email,
-                role: user.role,
+                role: user.role ,
             }, 
             process.env.JWT_KEY!
         );

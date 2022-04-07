@@ -6,7 +6,7 @@ it('fails when signin with user with supplied email', async () => {
         .post('/api/users/signin')
         .send({
             email: 'test@test.com',
-            password: '123456'
+            password: '123456',
         })
         .expect(400)
 });
@@ -16,7 +16,8 @@ it('fails when signin with wrong credential', async () => {
         .post('/api/users/signup')
         .send({
             email: 'test@test.com',
-            password: '123456'
+            password: '123456',
+            role: 'admin'
         })
         .expect(201)
 
@@ -24,7 +25,7 @@ it('fails when signin with wrong credential', async () => {
         .post('/api/users/signin')
         .send({
             email: 'test@test.com',
-            password: '1234567'
+            password: '1234567',
         })
         .expect(400)
 })
@@ -34,7 +35,8 @@ it('response with cookie when signin success', async () => {
         .post('/api/users/signup')
         .send({
             email: 'test@test.com',
-            password: '123456'
+            password: '123456',
+            role: 'admin'
         })
         .expect(201)
 
@@ -42,7 +44,7 @@ it('response with cookie when signin success', async () => {
         .post('/api/users/signin')
         .send({
             email: 'test@test.com',
-            password: '123456'
+            password: '123456',
         })
         .expect(200)
 
