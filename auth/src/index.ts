@@ -4,6 +4,7 @@ import { app } from './app';
 
 const start = async () => {
     console.log('Starting auth service....'); 
+    console.log('mongo env ', process.env.MONGO_URI);
     
     if (!process.env.JWT_KEY) {
         throw new Error('JWT_KEY must be defined');
@@ -21,6 +22,7 @@ const start = async () => {
         })
         console.log('Connected to mongodb');
     } catch (err) {
+        console.log('Error when connect to mongoose')
         console.error(err);
     }   
 };
