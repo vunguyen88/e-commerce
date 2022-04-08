@@ -5,8 +5,8 @@ const BuildClient = ({ req }) => {
         // api call from server
         
         return axios.create({
-            // baseURL: 'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
-            baseURL: 'http://ecommerce-microservices.me/',
+            //baseURL: 'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
+            baseURL: 'http://ecommerce-microservices.me',
             headers: req.headers
         });
     } else {
