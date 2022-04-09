@@ -28,8 +28,8 @@ const SignIn = ({ currentUser }) => {
     };
   
     return (
-        <div className={styles.signIn}> 
-            <Container>
+        <div className={styles.signin_wrapper}> 
+            {/* <Container> */}
             <form onSubmit={onSubmit}>
                 <div className={styles.form_centered} >
                 <h1>Sign In</h1>
@@ -56,10 +56,10 @@ const SignIn = ({ currentUser }) => {
                 </div>
                 <div className={styles.auth_buttoncontainer}>
                     <div>
-                        <button className="btn btn-primary">Sign In</button>
+                        <button className={styles.button}>Sign In</button>
                     </div>
                    
-                    <div>
+                    {/* <div>
                     <div className={styles.socialbutton}>
                         <div className={styles.socialbutton_fb}>
                             <FaGoogle/> Login with Facebook
@@ -73,12 +73,12 @@ const SignIn = ({ currentUser }) => {
                             <FaFacebook/> Login with Google+
                         </div>
                     </div>
-                    </div>
+                    </div> */}
                  </div>
 
                 </div>
             </form>
-            </Container>
+            {/* </Container> */}
     
         </div>
     );

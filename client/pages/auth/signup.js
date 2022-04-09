@@ -27,8 +27,8 @@ const SignUp = () => {
     };
   
     return (
-        <div className={styles.signUp}>
-        <Container>
+        <div className={styles.signup_wrapper}>
+        {/* <Container> */}
         <form onSubmit={onSubmit}>
             <div className={styles.form_centered} >
                 <h1>Sign Up</h1>
@@ -57,11 +57,11 @@ const SignUp = () => {
                 Already a user? Login <a href="/auth/signin">here</a>
                 </div>
                 <div className={styles.auth_buttoncontainer}>
-                    <button className="btn btn-primary">Sign Up</button>
+                    <button className={styles.button}>Sign Up</button>
                 </div>
             </div>
         </form>
-        </Container>
+        {/* </Container> */}
         </div>
     );
 };
