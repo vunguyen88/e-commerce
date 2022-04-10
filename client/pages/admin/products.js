@@ -14,7 +14,7 @@ function Products() {
             {/*=========== Main ========== */}
             <div className={styles.main}>
                 <div className={styles.main_container}>
-                    Products Pages
+                    Products page is under construction. Thank you for visiting!
                     <ProductList />
                 </div>
             </div>

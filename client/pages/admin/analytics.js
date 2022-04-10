@@ -24,7 +24,7 @@ function Analytics() {
                     {/* MAIN SECTION
                     { displayProducts && <ProductList /> }
                     { displayOrders && <OrderList /> } */}
-                    Analytics Pages
+                    Analytics page is under construction. Thank you for visiting!
                 </div>
             </div>
         </div>

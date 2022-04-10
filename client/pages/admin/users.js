@@ -24,7 +24,7 @@ function Users() {
                     {/* MAIN SECTION
                     { displayProducts && <ProductList /> }
                     { displayOrders && <OrderList /> } */}
-                    Users Pages
+                    Users page is under construction. Thank you for visiting!
                 </div>
             </div>
         </div>
