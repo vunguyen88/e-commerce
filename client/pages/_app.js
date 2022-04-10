@@ -32,7 +32,7 @@ const AppComponent = ({ Component, pageProps, products, currentUser }) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
             <CartItemContext.Provider value={{ cartItemCount: cartItemCount, updateCartItemCount: updateCartItemCount, resetCartItemCount: resetCartItemCount }}>
-                <NavBar currentUser={currentUser} />
+                <NavBar {...pageProps} currentUser={currentUser} products={products}/>
                 <Component {...pageProps} />
             </CartItemContext.Provider>  
             <Footer />
@@ -42,16 +42,12 @@ const AppComponent = ({ Component, pageProps, products, currentUser }) => {
     
 AppComponent.getInitialProps = async (appContext) => {
 
-    const client = buildClient(appContext.ctx);
-    // console.log('CLIENT ', client)
-    // console.log('CONTEXT IN APP ', appContext)
+    const client = buildClient(appContext.ctx); 
 
     let pageProps = {};
-    // const { data } = await client.get('/api/users/currentuser');
-    // console.log('data in app ', data);
-    // return data
 
     const products = await client.get('/api/products');
+    console.log('products in app ', products.data)
     let currentUser = {};
     try {
         currentUser = await client.get('/api/users/currentuser');
@@ -67,72 +63,15 @@ AppComponent.getInitialProps = async (appContext) => {
             if( appContext.Component.getInitialProps) {
                 pageProps = await appContext.Component.getInitialProps(appContext.ctx, client);
             }
-            return {pageProps, ...products.data, ...currentUser.data}
+            return {pageProps, products: [...products.data], ...currentUser.data}
         } else {
             console.log('None empty object', currentUser.data) 
             if( appContext.Component.getInitialProps) {
                 pageProps = await appContext.Component.getInitialProps(appContext.ctx, client);
             }
-            return {pageProps, ...products.data, ...currentUser.data}
+            return {pageProps, products: [...products.data], ...currentUser.data}
        }
     }
-    ////////////
-    // const currentUser = await client.get('/api/users/currentuser');
-    // if( appContext.Component.getInitialProps) {
-    //     pageProps = await appContext.Component.getInitialProps(appContext.ctx, client);
-    // }
-    // return {pageProps, ...products.data, ...currentUser.data}
-
-
-
-
-
-    ///////////
-    // const currentUser = await client.get('/api/users/currentuser');
-    // console.log('PRODUCT DATA ', products.data)
-    // if( appContext.Component.getInitialProps) {
-    //     pageProps = await appContext.Component.getInitialProps(appContext.ctx, client, products.data);
-    // }
-
-    // client.get('/api/users/currentuser')
-    // .then(res => {
-    //     console.log('Current User response ', res);
-    //     return {pageProps, ...products.data, ...currentUser.data} 
-    // })
-    // .catch(err => {
-    //     console.log('ERROR IN GET CURRENT USER');
-    //     let currentUser = {};
-    //     return {pageProps, ...products.data, currentUser} 
-    // })
-    //const currentUser = await client.get('/api/users/currentuser');
-    
-    //console.log('CURRENT USER ', currentUser)
-    //console.log('pageProps ', pageProps)
-
-    // return {pageProps, ...products.data, ...currentUser.data}
-    //return {pageProps, ...products.data} 
-
-
-
-
-
-    // try {
-    //     const res = await client.get('/api/users/currentuser');
-    //     console.log('GET PROPS FROM APP PAGE')
-
-    //     if( appContext.Component.getInitialProps) {
-    //         // pageProps = await appContext.Component.getInitialProps(appContext.ctx, client, res.data.currentUser);
-    //         pageProps = await appContext.Component.getInitialProps(appContext.ctx);
-    //     }
-    //     console.log('pageProps ', pageProps)
-    //     return {
-    //         pageProps,
-    //         ...res.data
-    //     }
-    // } catch(err) {
-    //     console.log('ERROR IN _APP')
-    //     return {pageProps}
-    // }
 };
 
 export default AppComponent;
