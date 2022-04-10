@@ -14,7 +14,7 @@ function Orders() {
             {/*=========== Main ========== */}
             <div className={styles.main}>
                 <div className={styles.main_container}>
-                    Orders Pages
+                    Orders page is under construction. Thank you for visiting!
                     <OrderList />
                 </div>
             </div>

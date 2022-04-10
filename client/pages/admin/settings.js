@@ -24,7 +24,7 @@ function Settings() {
                     {/* MAIN SECTION
                     { displayProducts && <ProductList /> }
                     { displayOrders && <OrderList /> } */}
-                    Settings Pages
+                    Settings page is under construction. Thank you for visiting!
                 </div>
             </div>
         </div>

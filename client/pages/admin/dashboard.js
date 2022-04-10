@@ -24,7 +24,7 @@ function Dashboard() {
                     {/* MAIN SECTION
                     { displayProducts && <ProductList /> }
                     { displayOrders && <OrderList /> } */}
-                    Dashboard Pages
+                    Dashboard page is under construction. Thank you for visiting!
                 </div>
             </div>
         </div>
