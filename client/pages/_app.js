@@ -5,6 +5,8 @@ import buildClient from "../api/build-client";
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
 import CartItemContext from "../context/cartItemContext";
+
+import styles from '../styles/layout.scss'; 
 // import Zoom from 'react-reveal/Zoom';
 
 const AppComponent = ({ Component, pageProps, products, currentUser }) => {
@@ -33,7 +35,7 @@ const AppComponent = ({ Component, pageProps, products, currentUser }) => {
             </Head>
             <CartItemContext.Provider value={{ cartItemCount: cartItemCount, updateCartItemCount: updateCartItemCount, resetCartItemCount: resetCartItemCount }}>
                 <NavBar {...pageProps} currentUser={currentUser} products={products}/>
-                <Component {...pageProps} />
+                <Component {...pageProps} className={styles.body} />
             </CartItemContext.Provider>  
             <Footer />
         </div>
@@ -47,13 +49,13 @@ AppComponent.getInitialProps = async (appContext) => {
     let pageProps = {};
 
     const products = await client.get('/api/products');
-    console.log('products in app ', products.data)
+
     let currentUser = {};
     try {
         currentUser = await client.get('/api/users/currentuser');
     } 
     catch (err) {
-        console.log('ERROR in get currentUser')
+        console.log(err)
     }
     
     finally {

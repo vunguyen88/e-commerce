@@ -48,27 +48,34 @@ const HomeNav = ({ currentUser, products }) => {
 
     const onSearchChange = e => {
         var value = e.target.value;
-        setSearchPrefix(value);
-        //var words = value.split(" ");
-        var trie_prefix = value.toLowerCase();
-        var found_words = searchTrie.find(trie_prefix).sort((a, b) => {
-          return a.length - b.length;
-        });
-        found_words.length > 0 ? setDropDownOpen(true) : setDropDownOpen(false);
-        setSuggestionList(found_words)
-        var first_word = found_words[0];
 
-        if (
-          found_words.length !== 0 &&
-          value !== "" &&
-          value[value.length - 1] !== " "
-        ) {
-            if (first_word != null) {
-                var remainder = first_word.slice(trie_prefix.length);
-                setSuggestion(value + remainder);
-            }
+        if (value==="") {
+            setSearchPrefix("")
+            setDropDownOpen(false);
+            setSuggestionList([]);
         } else {
-          setSuggestion(value);
+            setSearchPrefix(value);
+            //var words = value.split(" ");
+            var trie_prefix = value.toLowerCase();
+            var found_words = searchTrie.find(trie_prefix).sort((a, b) => {
+              return a.length - b.length;
+            });
+            found_words.length > 0 ? setDropDownOpen(true) : setDropDownOpen(false);
+            setSuggestionList(found_words)
+            var first_word = found_words[0];
+    
+            if (
+              found_words.length !== 0 &&
+              value !== "" &&
+              value[value.length - 1] !== " "
+            ) {
+                if (first_word != null) {
+                    var remainder = first_word.slice(trie_prefix.length);
+                    setSuggestion(value + remainder);
+                }
+            } else {
+              setSuggestion(value);
+            }
         }
     }
 
@@ -77,7 +84,6 @@ const HomeNav = ({ currentUser, products }) => {
         for (let i = 0; i < searchList.length; i++) {
             if (searchList[i].name.toLowerCase() === e.target.innerHTML) {
                 url = searchList[i].url;
-                console.log('url ', url)
             }
         }
         return Router.push(`/${url}`);
@@ -137,26 +143,20 @@ const HomeNav = ({ currentUser, products }) => {
                             className={style.search_box}
                             aria-label="Search"
                             onChange={onSearchChange}
+                            value={searchPrefix}
                         />
-
-                        {   dropDownOpen &&
-                            <Dropdown >
-                                {/* <Dropdown.Toggle as="<div>"></Dropdown.Toggle> */}
-                                <Dropdown.Menu show rootCloseEvent="click" className>
+                        {dropDownOpen && <Dropdown >
+                                {dropDownOpen && <Dropdown.Menu show rootCloseEvent="click" className>
                                 {suggestionList.map(item => (
-                                     <Dropdown.Item >
-                                         <Nav.Link onClick={ onDropdownItemClick }>{item}</Nav.Link>
+                                     <Dropdown.Item key={item} onClick={ onDropdownItemClick }>
+                                         {item}
+                                         {/* <Nav.Link onClick={ onDropdownItemClick }>{item}</Nav.Link> */}
                                      </Dropdown.Item>
                                 ))}
-                                </Dropdown.Menu>
-                            </Dropdown>
-                            
-                        }
-
+                                </Dropdown.Menu>}
+                            </Dropdown>}
                         </Form.Group>
                         
-                        {/* <Button variant="outline-success">Search</Button> */}
-                        {/* {currentUser ? currentUser.email : null} */}
                         <Nav.Link href="/cart" className={style.notification}>
                             <BsBag className={style.nav_icon} />
                             {cartItemCount && cartItemCount > 0 ? <span className={style.cart_notification}>{cartItemCount}</span> : null}
