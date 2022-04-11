@@ -3,7 +3,7 @@ import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button, Dropdow
 import Link from 'next/link';
 import Router from 'next/router';
 import Trie from '../utils/trie';
-
+//import useWindowDimensions from '../api/get-dimension';
 import { BsBag, BsPerson, BsBoxArrowInRight, BsGrid1X2 } from "react-icons/bs";
 // import { BsPerson } from "react-icons/bs";
 import style from '../styles/components/navbar.module.scss';
@@ -16,8 +16,23 @@ const HomeNav = ({ currentUser, products }) => {
     const [ suggestionList, setSuggestionList ] = useState([]);
     const [ suggestion, setSuggestion ] = useState("");
     const [ dropDownOpen, setDropDownOpen ] = useState(false);
+    //const { height, width } = useWindowDimensions();
+    //if(typeof window === 'undefined') console.log('tehre no window')
+    //console.log('width ', window.innerWidth)
+    
     // initial trie data structure
     let searchTrie = new Trie();
+    // if (typeof window !== undefined) {
+    //     console.log('in browser');
+    //     console.log(window)
+    // } else {
+    //     console.log('in server side')
+    // }
+    // if (viewport.is("md")){
+    //     console.log('MD VIEW PORT')
+    // } else {
+    //     console.log('DIFFERNT VIEW PORT')
+    // }
 
     let cart;
     let searchList = [
@@ -89,6 +104,10 @@ const HomeNav = ({ currentUser, products }) => {
         return Router.push(`/${url}`);
     }
 
+    const onNavToggleClick = () => {
+        console.log('on nav toggle click')
+    }
+
     if (typeof window !== 'undefined') {
         cart = JSON.parse(sessionStorage.getItem('cart'));
     }
@@ -111,8 +130,8 @@ const HomeNav = ({ currentUser, products }) => {
             {/* <Container> */}
             <Navbar.Brand style={{ cursor: 'pointer', marginLeft: '2rem' }} onClick={() => Router.push('/')}>E-Commerce</Navbar.Brand>
             {/* <Navbar.Brand href="/">E-Commerce</Navbar.Brand> */}
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" className={style.nav_icon} onClick={onNavToggleClick}/>
+            <Navbar.Collapse id="responsive-navbar-nav" className={style.nav_icons_mobile}>
                 <Nav className="me-auto">
                     {/* <NavDropdown title="Products" id="collasible-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -126,9 +145,7 @@ const HomeNav = ({ currentUser, products }) => {
                     <Nav.Link onClick={() => Router.push('/locations')}>Locations</Nav.Link>
                     <Nav.Link onClick={() => Router.push('/info')}>Info</Nav.Link>
                     <Nav.Link onClick={() => Router.push('/story')}>Story</Nav.Link>
-                    {/* <Nav.Link href="/locations">Locations</Nav.Link> */}
-                    {/* <Nav.Link href="/info">Info</Nav.Link>
-                        <Nav.Link href="/story">Story</Nav.Link> */}
+                    
                 </Nav>
                 <Nav style={{ marginRight: '2rem' }}>
                     {/* <Nav.Link href="#deets">More deets</Nav.Link>

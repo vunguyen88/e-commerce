@@ -24,7 +24,7 @@ function Messages() {
                     {/* MAIN SECTION
                     { displayProducts && <ProductList /> }
                     { displayOrders && <OrderList /> } */}
-                    Messages Page is under construction. Thank you for visiting!
+                    Messages page is under construction. Thank you for visiting!
                 </div>
             </div>
         </div>
