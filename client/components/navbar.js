@@ -16,23 +16,9 @@ const HomeNav = ({ currentUser, products }) => {
     const [ suggestionList, setSuggestionList ] = useState([]);
     const [ suggestion, setSuggestion ] = useState("");
     const [ dropDownOpen, setDropDownOpen ] = useState(false);
-    //const { height, width } = useWindowDimensions();
-    //if(typeof window === 'undefined') console.log('tehre no window')
-    //console.log('width ', window.innerWidth)
     
     // initial trie data structure
     let searchTrie = new Trie();
-    // if (typeof window !== undefined) {
-    //     console.log('in browser');
-    //     console.log(window)
-    // } else {
-    //     console.log('in server side')
-    // }
-    // if (viewport.is("md")){
-    //     console.log('MD VIEW PORT')
-    // } else {
-    //     console.log('DIFFERNT VIEW PORT')
-    // }
 
     let cart;
     let searchList = [

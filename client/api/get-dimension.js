@@ -2,7 +2,7 @@
 
 // function getWindowDimensions() {
 //     if (typeof(window) === undefined) {
-//         return {width: 0, height: 0};
+//         return;
 //     } else { 
 //         console.log('reach here')
 //         const { innerWidth: width, innerHeight: height } = window;
