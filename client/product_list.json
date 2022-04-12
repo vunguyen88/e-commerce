@@ -20,7 +20,19 @@
         "type": "men_top",
         "category": ["all", "men", "men-top"],
         "color": ["white"],
-        "productUrl": "https://images.pexels.com/photos/9604298/pexels-photo-9604298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        "productUrl": "https://images.pexels.com/photos/3140049/pexels-photo-3140049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
+    {
+        "name": "Denim Jacket",
+        "price": 89,
+        "size": ["S", "M", "L"],
+        "details": "A diam maecenas sed enim ut sem viverra aliquet eget. Semper eget duis at tellus at urna condimentum mattis. Id aliquet risus feugiat in ante. Cum sociis natoque penatibus et. Morbi leo urna molestie at elementum eu. Adipiscing diam donec adipiscing tristique risus. Commodo odio aenean sed adipiscing diam donec adipiscing tristique risus. A diam maecenas sed enim ut sem viverra aliquet eget. Semper eget duis at tellus at urna condimentum mattis. Id aliquet risus feugiat in ante. Eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Justo eget magna fermentum iaculis eu non diam phasellus. Aliquam etiam erat velit scelerisque in dictum non. Aliquet bibendum enim facilisis gravida neque convallis. Nulla malesuada pellentesque elit eget gravida cum. Lobortis mattis aliquam faucibus purus in massa tempor nec. Mollis nunc sed id semper risus in hendrerit. Amet nulla facilisi morbi tempus iaculis. Hendrerit gravida rutrum quisque non tellus orci ac auctor augue",
+        "reviews": ["fit nicely", "nunc sed id", "Neque convallis a cras semper"],
+        "type": "men_top",
+        "category": ["all", "men", "men-top"],
+        "color": ["white"],
+        "productUrl": "https://images.pexels.com/photos/10909254/pexels-photo-10909254.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
     ,
     {
@@ -44,7 +56,7 @@
         "type": "men_bottom",
         "category": ["all", "men", "men-bottom"],
         "color": ["white"],
-        "productUrl": "https://images.pexels.com/photos/9787579/pexels-photo-9787579.jpeg"
+        "productUrl": "https://images.pexels.com/photos/3526644/pexels-photo-3526644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
     ,
     {
@@ -60,15 +72,39 @@
     }
     ,
     {
+        "name": "Men Short",
+        "price": 39,
+        "size": ["S", "M", "L"],
+        "details": "Morbi leo urna molestie at elementum eu. Adipiscing diam donec adipiscing tristique risus. Commodo odio aenean sed adipiscing diam donec adipiscing tristique risus. Pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper. Interdum velit euismod in pellentesque massa placerat duis ultricies. Lacus sed turpis tincidunt id aliquet risus feugiat in. Auctor augue mauris augue neque gravida in fermentum et sollicitudin. Arcu non odio euismod lacinia. Eget nullam non nisi est sit amet. Arcu dictum varius duis at consectetur. Arcu non odio euismod lacinia. Eget nullam non nisi est sit amet. Arcu dictum varius duis at consectetur.",
+        "reviews": ["look good", "augue eget arcu", "Diam volutpat commodo sed egestas", "volutpat commodo sed egestas egestas fringilla phasellus"], 
+        "type": "men_bottom",
+        "category": ["all", "men", "men-bottom"],
+        "color": ["white"],
+        "productUrl": "https://images.pexels.com/photos/10204771/pexels-photo-10204771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+    ,
+    {
         "name": "Women Top Collection",
-        "price": 90,
+        "price": 45,
+        "size": ["S", "M"],
+        "details": "Vitae suscipit tellus mauris a diam maecenas. Cum sociis natoque penatibus et. Morbi leo urna molestie at elementum eu. Adipiscing diam donec adipiscing tristique risus. Mi proin sed libero enim sed faucibus. Cum sociis natoque penatibus et. Morbi leo urna molestie at elementum eu. Adipiscing diam donec adipiscing tristique risus. Commodo odio aenean sed adipiscing diam donec adipiscing tristique risus. A diam maecenas sed enim ut sem viverra aliquet eget. Pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper. Faucibus et molestie ac feugiat sed lectus vestibulum mattis. Proin sed libero enim sed faucibus turpis in eu. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Ut morbi tincidunt augue interdum velit euismod. Id cursus metus aliquam eleifend mi.",
+        "reviews": ["fit well", " Commodo odio aenean sed adipiscing"],
+        "type": "women_top",
+        "category": ["all", "women", "women-top"],
+        "color": ["white"],
+        "productUrl": "https://images.pexels.com/photos/884979/pexels-photo-884979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    }
+    ,
+    {
+        "name": "Fall Jacket",
+        "price": 39,
         "size": ["S", "M"],
         "details": "Lectus magna fringilla urna porttitor rhoncus dolor purus non enim. Sed ullamcorper morbi tincidunt ornare massa. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Mi proin sed libero enim sed faucibus. Cum sociis natoque penatibus et. Morbi leo urna molestie at elementum eu. Adipiscing diam donec adipiscing tristique risus. Commodo odio aenean sed adipiscing diam donec adipiscing tristique risus. A diam maecenas sed enim ut sem viverra aliquet eget. Pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper. Faucibus et molestie ac feugiat sed lectus vestibulum mattis. Proin sed libero enim sed faucibus turpis in eu. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Ut morbi tincidunt augue interdum velit euismod. Id cursus metus aliquam eleifend mi.",
         "reviews": ["fit well", " Commodo odio aenean sed adipiscing"],
         "type": "women_top",
         "category": ["all", "women", "women-top"],
         "color": ["white"],
-        "productUrl": "https://images.pexels.com/photos/884979/pexels-photo-884979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        "productUrl": "https://images.pexels.com/photos/5836080/pexels-photo-5836080.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
     ,
     {
@@ -105,6 +141,18 @@
         "category": ["all", "women", "women-bottom"],
         "color": ["gray"],
         "productUrl": "https://images.pexels.com/photos/1381556/pexels-photo-1381556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    }
+    ,
+    {
+        "name": "Women Denim Collection", 
+        "price": 60,
+        "size": ["S", "M"],
+        "details": "Porta nibh venenatis cras sed felis. Id aliquet lectus proin nibh nisl condimentum id. Ullamcorper sit amet risus nullam eget felis eget nunc lobortis.Vitae suscipit tellus mauris a diam maecenas. Sit amet massa vitae tortor condimentum lacinia. At urna condimentum mattis pellentesque. Ornare massa eget egestas purus. Tristique sollicitudin nibh sit amet. At lectus urna duis convallis convallis tellus. A cras semper auctor neque vitae tempus quam. A arcu cursus vitae congue. Justo nec ultrices dui sapien eget mi proin. Porta nibh venenatis cras sed felis. Id aliquet lectus proin nibh nisl condimentum id. Ullamcorper sit amet risus nullam eget felis eget nunc lobortis. Tortor id aliquet lectus proin nibh nisl condimentum id. Tortor id aliquet lectus proin nibh nisl condimentum id.",
+        "reviews": ["a little too long", "Tristique sollicitudin nibh sit amet", "Tortor id aliquet lectus proin"],
+        "type": "women_bottom",
+        "category": ["all", "women", "women-bottom"],
+        "color": ["gray"],
+        "productUrl": "https://images.pexels.com/photos/10802672/pexels-photo-10802672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
     ,
     {
