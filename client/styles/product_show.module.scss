@@ -4,19 +4,21 @@
   padding-top: 8rem;
   display: flex;
   margin-bottom: 8rem;
-  max-width: 100%;
+  width: 100%;
   max-height: 100vh;
 }
 
 .left_container {
-  max-width: 55%;
+  width: 55%;
   display: flex;
   justify-content: flex-end;
-  margin-right: 2%;
+  margin-right: 2rem;
+  margin-left: 3rem;
+  margin-bottom: 3rem;
 }
 
 .product_img {
-  max-width: 80%;
+  max-width: 100%;
 }
 
 .right_container {
@@ -27,7 +29,7 @@
 }
 
 .product_info {
-  max-width: 60%;
+  max-width: 65%;
   padding-left: 5%;
 }
 
@@ -49,6 +51,13 @@
   font-size: 1.8em;
 }
 
+.product_type {
+  font-size: 0.8em;
+  color: #95979a;
+  letter-spacing: 0.05em;
+  margin-top: 1.5em;
+}
+
 .product_price {
   font-size: 1em;
   color: #383333;
@@ -64,6 +73,9 @@
   color: #95979a;
   letter-spacing: 0.05em;
   margin-top: 1.5em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .button {
@@ -85,5 +97,6 @@
   display: inline-block;
   text-align: center;
   align-items: flex-start;
+  margin-top: 3rem;
   cursor: default;
 }

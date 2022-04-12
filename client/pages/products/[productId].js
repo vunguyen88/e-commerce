@@ -25,7 +25,7 @@ const ProductShow = ({product}) => {
                 currentCart[index].count ++;
                 sessionStorage.setItem('cart', JSON.stringify(currentCart));
                 setCartItems(currentCart);
-                toggleSidebar();
+                toggleSidebar(); 
             } else {
                 product.count = 1;
                 let newCart = [...currentCart, product];
@@ -52,9 +52,9 @@ const ProductShow = ({product}) => {
                 <div className={styles.right_container}>
                     <div className={styles.product_info}>
                         <h1 className={styles.product_name}>{product.name}</h1>
-                        <div className={styles.product_details}>{product.type}</div>
+                        <div className={styles.product_type}>{product.type}</div>
                         <p className={styles.product_price}>$ {product.price}</p>
-                        <p className={styles.product_details}>{product.details}</p>
+                        <div className={styles.product_details}>{product.details}</div>
                         <button product={product} onClick={onClick} className={styles.button}>add item</button>
                     </div>
                 </div>
