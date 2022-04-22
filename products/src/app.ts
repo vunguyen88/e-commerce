@@ -29,8 +29,8 @@ app.use(createProductRouter);
 app.use(showProductRouter);
 app.use(indexProductRouter);
 app.use(updateProductRouter);
-app.all('*', async (req, res) => {
-    throw new NotFoundError();
+app.all('*', async (req, res, next) => {
+    next(new NotFoundError());
 });
 
 app.use(errorHandler);
