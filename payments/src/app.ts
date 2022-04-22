@@ -24,8 +24,8 @@ app.use(currentUser);
 
 app.use(createChargeRouter);
 
-app.all('*', async (req, res) => {
-    throw new NotFoundError();
+app.all('*', async (req, res, next) => {
+    next(new NotFoundError());
 });
 
 app.use(errorHandler);
