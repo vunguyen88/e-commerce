@@ -32,6 +32,11 @@
   animation-iteration-count: none;
 }
 
+.title {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
 .signin_wrapper {
   @include fadein-animation(3s) {
     0% {
@@ -83,6 +88,12 @@
   border-radius: 30px;
 }
 
+.form-control {
+  //width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 .auth_buttoncontainer {
   text-align: center;
   margin-top: 10px;
@@ -119,6 +130,7 @@
 .button {
   background-color: #111827d2;
   border: 1px solid transparent;
+  margin-top: 1.5rem;
   border-radius: 0.65rem;
   box-sizing: border-box;
   color: #ffffff;

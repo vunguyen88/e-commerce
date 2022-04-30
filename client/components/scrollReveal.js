@@ -4,7 +4,7 @@ import scrollReveal from 'scrollreveal'
 // const isBrowser = typeof window !== "undefined";
 
 const ScrollReveal = ({ children, style, height }) => {
-    console.log('HEIGHT ', height)
+    //console.log('HEIGHT ', height)
     if (typeof window !== 'undefined') {
         const sectionRef = useRef(null);
         useEffect(() => {

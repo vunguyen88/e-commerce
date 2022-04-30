@@ -8,10 +8,12 @@ import { BsBag, BsPerson, BsBoxArrowInRight, BsGrid1X2 } from "react-icons/bs";
 // import { BsPerson } from "react-icons/bs";
 import style from '../styles/components/navbar.module.scss';
 import CartItemContext from '../context/cartItemContext';
+import UserAuthContext from '../context/userAuthContext';
 
 const HomeNav = ({ currentUser, products }) => {
     const [ cartItem, setCartItem ] = useState(0);
     const { cartItemCount } = useContext(CartItemContext);
+    //const { userAuthInfo } = useContext(UserAuthContext);
     const [ searchPrefix, setSearchPrefix ] = useState("");
     const [ suggestionList, setSuggestionList ] = useState([]);
     const [ suggestion, setSuggestion ] = useState("");

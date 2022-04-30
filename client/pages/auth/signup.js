@@ -1,28 +1,32 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container } from 'react-bootstrap';
 import { useState } from 'react';
+// import UserAuthContext from '../context/userAuthContext';
 import Router from 'next/router';
 import useRequest from '../../hooks/use-request';
 import styles from '../../styles/auth.module.scss';
 
 const SignUp = () => {
     const [email, setEmail] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('+1');
     const [password, setPassword] = useState('');
+    // const { updateUserAuthInfo } = useContext(UserAuthContext); // import method updateUserAuth from context API
     //const [errors, setErrors] = useState([]);
     const { doRequest, errors } = useRequest({
         url: '/api/users/signup',
         method: 'post',
         body: {
             email,
+            phoneNumber,
             password,
-            role: 'guest'
+            role: 'guest',
+            verifiedNumber: false
         },
-        onSuccess: (data) => Router.push('/')
+        onSuccess: (data) => Router.push('/auth/verify')
     });
   
     const onSubmit = async event => {
         event.preventDefault();
-        
         await doRequest();
     };
   
@@ -31,13 +35,23 @@ const SignUp = () => {
         {/* <Container> */}
         <form onSubmit={onSubmit}>
             <div className={styles.form_centered} >
-                <h1>Sign Up</h1>
+                <h1 className={styles.title}>Sign Up</h1>
                 <div className="form-group">
                     <label>Email Address</label>
                     <input
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                         className="form-control"
+                        style={{ marginTop: '.5rem', marginBottom: '.5rem'}}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Phone Number</label>
+                    <input
+                        value={phoneNumber}
+                        onChange={e => setPhoneNumber(e.target.value)}
+                        className="form-control"
+                        style={{ marginTop: '.5rem', marginBottom: '.5rem'}}
                     />
                 </div>
                 <div className="form-group">
@@ -47,6 +61,7 @@ const SignUp = () => {
                         onChange={e => setPassword(e.target.value)}
                         type="password"
                         className="form-control"
+                        style={{ marginTop: '.5rem', marginBottom: '.5rem'}}
                     />
                 </div>
                 

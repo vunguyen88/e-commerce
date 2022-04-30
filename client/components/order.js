@@ -3,7 +3,7 @@ import axios from 'axios';
 import styles from '../styles/components/order.module.scss';
 
 function Order({ order }) {
-    console.log('Order ###', order);
+    // console.log('Order ', order);
     const [productList, setProductList] = useState();
 
     useEffect(() => {
