@@ -6,6 +6,9 @@ interface UserAttrs {
     email: string;
     password: string;
     role: string;
+    phoneNumber: string;
+    verifiedNumber: boolean;
+    authHistory: {authType: string, authTime: string, isVerified: boolean, authNumber: number}[];
 }
 
 // An interface that describes the properties a User Model has
@@ -18,6 +21,9 @@ interface UserDoc extends mongoose.Document{
     email: string;
     password: string;
     role: string;
+    phoneNumber: string;
+    verifiedNumber: boolean;
+    authHistory: {authType: string, authTime: string, isVerified: boolean, authNumber: number}[];
 }
 
 const userSchema = new mongoose.Schema({
@@ -32,7 +38,34 @@ const userSchema = new mongoose.Schema({
     role: {
         type: String,
         required: true
-    }
+    },
+    phoneNumber: {
+        type: String,
+        require: true
+    },
+    verifiedNumber: {
+        type: Boolean,
+        require: true
+    },
+    authHistory: [{
+        authType: {
+            type: String,
+            require: true
+        },
+        authTime: {
+            type: String,
+            require: true
+        },
+        isVerified: {
+            type: Boolean,
+            require: true
+        },
+        authNumber: {
+            type: Number,
+            require: true
+        }
+    }]
+    
 }, {
     // Transform the return for id instead of _id and take out password and __v.
     toJSON: {
