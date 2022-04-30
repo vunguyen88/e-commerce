@@ -5,12 +5,18 @@ import buildClient from "../api/build-client";
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
 import CartItemContext from "../context/cartItemContext";
-
+import UserAuthContext from '../context/userAuthContext';
 import styles from '../styles/layout.scss'; 
 // import Zoom from 'react-reveal/Zoom';
 
 const AppComponent = ({ Component, pageProps, products, currentUser }) => {
     const [cartItemCount, setCartItemCount] = useState(0);
+    const [userAuthInfo, setUserAuthInfo] = useState({});
+
+    const updateUserAuthInfo = (userAuthInfo) => {
+        setUserAuthInfo(userAuthInfo);
+    }
+
     const updateCartItemCount = (count) => {
         setCartItemCount(cartItemCount + count);
     }
@@ -33,16 +39,19 @@ const AppComponent = ({ Component, pageProps, products, currentUser }) => {
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
+            <UserAuthContext.Provider value={{ userAuthInfo: userAuthInfo, updateUserAuthInfo: updateUserAuthInfo }}>
             <CartItemContext.Provider value={{ cartItemCount: cartItemCount, updateCartItemCount: updateCartItemCount, resetCartItemCount: resetCartItemCount }}>
                 <NavBar {...pageProps} currentUser={currentUser} products={products}/>
                 <Component {...pageProps} className={styles.body} />
             </CartItemContext.Provider>  
+            </UserAuthContext.Provider>
             <Footer />
         </div>
     );
 }
     
 AppComponent.getInitialProps = async (appContext) => {
+    console.log('RUN CURRENT USER')
 
     const client = buildClient(appContext.ctx); 
 
@@ -53,6 +62,8 @@ AppComponent.getInitialProps = async (appContext) => {
     let currentUser = {};
     try {
         currentUser = await client.get('/api/users/currentuser');
+        // console.log('current user config ', currentUser.config)
+        // console.log('current user base url ', currentUser.baseURL)
     } 
     catch (err) {
         console.log(err)
@@ -65,7 +76,7 @@ AppComponent.getInitialProps = async (appContext) => {
             if( appContext.Component.getInitialProps) {
                 pageProps = await appContext.Component.getInitialProps(appContext.ctx, client);
             }
-            return {pageProps, products: [...products.data], ...currentUser.data}
+            return {pageProps, products: [...products.data], currentUser: {}}
         } else {
             console.log('None empty object', currentUser.data) 
             if( appContext.Component.getInitialProps) {

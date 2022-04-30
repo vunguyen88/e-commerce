@@ -2,7 +2,7 @@ import styles from '../styles/components/custom_button.module.scss';
 import Router from 'next/router'; 
 
 const CustomButton = (props) => {
-    console.log('props in custom button ', props)
+    // console.log('props in custom button ', props)
     const { color, bgColor, text, mLeft, mRight } = props;
     // const onClick = () => {
     //     if (sessionStorage.getItem('cart')) {

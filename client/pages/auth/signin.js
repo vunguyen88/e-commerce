@@ -7,7 +7,7 @@ import styles from '../../styles/auth.module.scss';
 import {FaFacebook, FaGoogle} from 'react-icons/fa';
 
 const SignIn = ({ currentUser }) => {
-    console.log('currentuser in signin ', currentUser)
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -18,7 +18,7 @@ const SignIn = ({ currentUser }) => {
           email,
           password
         },
-        onSuccess: (data) => Router.push('/')
+        onSuccess: (data) => Router.push('/auth/verify')
       });
     
     const onSubmit = async event => {
@@ -32,13 +32,14 @@ const SignIn = ({ currentUser }) => {
             {/* <Container> */}
             <form onSubmit={onSubmit}>
                 <div className={styles.form_centered} >
-                <h1>Sign In</h1>
+                <h1 className={styles.title}>Sign In</h1>
                 <div className="form-group">
                     <label>Email Address</label>
                     <input 
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                         className="form-control"
+                        style={{ marginTop: '.5rem', marginBottom: '.5rem'}}
                     />
                 </div>
                 <div className="form-group">
@@ -48,6 +49,7 @@ const SignIn = ({ currentUser }) => {
                         onChange={e => setPassword(e.target.value)}
                         type="password"
                         className="form-control"
+                        style={{ marginTop: '.5rem', marginBottom: '.5rem'}}
                     />
                 </div>
                 {errors}
