@@ -15,7 +15,6 @@ spec:
       containers:
         - name: payments
           image: vunguyen88/ecommerce-payments
-          # image: elainevu/payments
           # image: us.gcr.io/e-commerce-319900/payments
           env:
             - name: NATS_CLIENT_ID
