@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import { app } from './app';
 
 const start = async () => {
-    console.log('Starting auth service...'); 
+    console.log('Starting auth service....'); 
     
     // check if all env is defined when app start running
     if (!process.env.JWT_KEY) {

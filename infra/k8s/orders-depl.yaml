@@ -15,7 +15,6 @@ spec:
       containers:
         - name: orders
           image: vunguyen88/ecommerce-orders
-          # image: elainevu/orders
           # image: us.gcr.io/e-commerce-319900/orders
           env:
             - name: NATS_CLIENT_ID

@@ -15,7 +15,6 @@ spec:
       containers:
         - name: client
           image: vunguyen88/ecommerce-client
-          # image: elainevu/client
           # image: us.gcr.io/e-commerce-319900/client
 ---
 apiVersion: v1

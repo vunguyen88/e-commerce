@@ -15,7 +15,6 @@ spec:
       containers:
         - name: expiration
           image: vunguyen88/ecommerce-expiration
-          # image: elainevu/expiration
           # image: us.gcr.io/e-commerce-319900/expiration
           env:
             - name: NATS_CLIENT_ID
