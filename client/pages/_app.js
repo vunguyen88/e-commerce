@@ -51,7 +51,6 @@ const AppComponent = ({ Component, pageProps, products, currentUser }) => {
 }
     
 AppComponent.getInitialProps = async (appContext) => {
-    console.log('RUN CURRENT USER')
 
     const client = buildClient(appContext.ctx); 
 
@@ -72,13 +71,11 @@ AppComponent.getInitialProps = async (appContext) => {
     finally {
         
         if (currentUser === {}) {
-            console.log('Empty object') 
             if( appContext.Component.getInitialProps) {
                 pageProps = await appContext.Component.getInitialProps(appContext.ctx, client);
             }
             return {pageProps, products: [...products.data], currentUser: {}}
         } else {
-            console.log('None empty object', currentUser.data) 
             if( appContext.Component.getInitialProps) {
                 pageProps = await appContext.Component.getInitialProps(appContext.ctx, client);
             }
