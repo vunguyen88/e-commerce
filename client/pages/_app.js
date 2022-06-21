@@ -51,7 +51,7 @@ const AppComponent = ({ Component, pageProps, products, currentUser }) => {
 }
     
 AppComponent.getInitialProps = async (appContext) => {
-
+    console.log('get initial props');
     const client = buildClient(appContext.ctx); 
 
     let pageProps = {};
