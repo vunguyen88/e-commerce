@@ -15,6 +15,7 @@ spec:
       containers:
         - name: products
           image: vunguyen88/ecommerce-products
+          # image: elainevu/products
           # image: us.gcr.io/e-commerce-319900/products
           env:
             - name: NATS_CLIENT_ID

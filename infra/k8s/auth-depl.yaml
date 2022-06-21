@@ -15,6 +15,7 @@ spec:
       containers:
         - name: auth
           image: vunguyen88/ecommerce-auth
+          # image: elainevu/auth
           # image: us.gcr.io/e-commerce-319900/auth
           env:
             - name: MONGO_URI
