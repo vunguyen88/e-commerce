@@ -61,6 +61,8 @@ AppComponent.getInitialProps = async (appContext) => {
     let currentUser = {};
     try {
         currentUser = await client.get('/api/users/currentuser');
+        // console.log('current user config ', currentUser.config)
+        // console.log('current user base url ', currentUser.baseURL)
     } 
     catch (err) {
         console.log(err)
